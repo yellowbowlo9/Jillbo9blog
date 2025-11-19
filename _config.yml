@@ -1,13 +1,13 @@
 # Site Configuration
-title: "My Blog"
-description: "A customizable blog with a dark, neon aesthetic"
+title: "Jill's Blog"
+description: ""
 baseurl: ""
-url: "https://yourusername.github.io"
+url: "https://Jillbo9blog.github.io"
 
 # Author info (edit these!)
 author:
-  name: "Your Name"
-  email: "your.email@example.com"
+  name: "Jill Lara"
+  email: "yellowbowlo9@gmail.com"
 
 # Collections
 collections:
