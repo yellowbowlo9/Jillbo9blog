@@ -1,6 +1,8 @@
 backend:
-  name: git-gateway
-  branch: main # or master, depending on your default branch
+  name: github
+  repo: yellowbowlo9/yellowbowlo9.github.io # Your GitHub username/repo
+  branch: main
+  base_url: https://decap-oauth.onrender.com # Free OAuth provider service
 
 # Uncomment below to enable drafts
 # publish_mode: editorial_workflow

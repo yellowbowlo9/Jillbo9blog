@@ -13,7 +13,7 @@ theme:
   muted_text: "#999"
   border_color: "#444"
 markdown: kramdown
-url: https://Jillbo9blog.github.io
+url: https://yellowbowlo9.github.io
 defaults:
   - scope:
       path: ""
