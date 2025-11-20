@@ -1,11 +1,13 @@
 backend:
   name: github
-  repo: yellowbowlo9/yellowbowlo9.github.io # Your GitHub username/repo
+  repo: yellowbowlo9/yellowbowlo9.github.io
   branch: main
-  base_url: https://decap-oauth.onrender.com # Free OAuth provider service
+  # Open Authoring: No external OAuth provider needed!
+  # This uses GitHub's authentication directly
+  open_authoring: true
 
-# Uncomment below to enable drafts
-# publish_mode: editorial_workflow
+# Editorial workflow for drafts and publishing
+publish_mode: editorial_workflow
 
 media_folder: "assets/images/uploads" # Where media files will be stored
 public_folder: "/assets/images/uploads" # The src attribute for uploaded media

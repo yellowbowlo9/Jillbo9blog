@@ -20,8 +20,13 @@ Once your site is live, go to:
 **https://yellowbowlo9.github.io/admin/**
 
 1. Click the "Login with GitHub" button
-2. Authorize the app (you'll only do this once)
-3. You're in! 🎊
+2. You'll be asked to fork the repository (click "Fork the repo")
+3. Make your changes in the admin panel
+4. Click "Publish" to create a pull request
+5. Go to your GitHub repo and merge the pull request
+6. Your changes go live in ~1 minute! 🎊
+
+**Note:** The first time you edit, it creates a fork. After that, you can set yourself as a collaborator to edit directly without pull requests.
 
 ## 📝 How to Use Your Blog
 
@@ -65,24 +70,29 @@ Everything is editable from the web interface at `/admin/`:
 - Wait 2-3 minutes after enabling
 - Try visiting your site first: https://yellowbowlo9.github.io
 
-### "Login button doesn't work"
+### "Login button doesn't work" or "Redirect loop"
 - Make sure you're logged into GitHub
-- Try in an incognito/private browser window
-- Clear your browser cache
+- Click "Fork the repo" when prompted
+- If you see a loop, clear your browser cache and try again
+- Use an incognito/private browser window if issues persist
 
 ### "My changes aren't showing up"
 - Wait 1-2 minutes (GitHub Pages needs to rebuild)
 - Hard refresh your browser (Ctrl+Shift+R or Cmd+Shift+R)
 
 ### Still having issues?
-The OAuth provider (decap-oauth.onrender.com) is a free service. If it's down, there's a backup option - just let me know and I'll help you set up an alternative!
+The new setup uses GitHub's built-in authentication (no external OAuth provider needed). If you're still having trouble, try:
+1. Making sure you have write access to the repository
+2. Checking that GitHub Pages is enabled and your site is live
+3. Clearing all browser cookies and cache for your site
 
 ## 💰 Cost
 
 **$0.00 FOREVER**
 - GitHub Pages: Free
 - Decap CMS: Free & Open Source
-- OAuth Provider: Free
+- GitHub Authentication: Free (built-in)
+- No external services needed
 - No credit card needed
 - No limits on posts or edits
 
