@@ -2,9 +2,10 @@ backend:
   name: github
   repo: yellowbowlo9/yellowbowlo9.github.io
   branch: main
-  # Open Authoring: No external OAuth provider needed!
-  # This uses GitHub's authentication directly
-  open_authoring: true
+  # TODO: Add OAuth backend for production use
+  # Uncomment and configure when you have OAuth set up:
+  # base_url: https://your-oauth-backend.vercel.app
+  # auth_endpoint: auth
 
 # Editorial workflow for drafts and publishing
 publish_mode: editorial_workflow
