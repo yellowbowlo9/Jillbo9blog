@@ -1,15 +1,35 @@
-# Site Configuration
-title: "Jill's Blog"
-description: ""
-baseurl: ""
-url: "https://Jillbo9blog.github.io"
-
-# Author info (edit these!)
+plugins:
+  - jekyll-feed
+  - jekyll-seo-tag
 author:
-  name: "Jill Lara"
-  email: "yellowbowlo9@gmail.com"
-
-# Collections
+  name: Jill Lara
+  email: yellowbowlo9@gmail.com
+theme:
+  primary_color: "#ff006e"
+  background: "#111"
+  secondary_bg: "#222"
+  container_bg: "#1a1a1a"
+  text_color: "#ddd"
+  muted_text: "#999"
+  border_color: "#444"
+markdown: kramdown
+url: https://Jillbo9blog.github.io
+defaults:
+  - scope:
+      path: ""
+      type: posts
+    values:
+      layout: post
+  - scope:
+      path: ""
+      type: journal
+    values:
+      layout: post
+  - scope:
+      path: ""
+      type: poetry
+    values:
+      layout: post
 collections:
   journal:
     output: true
@@ -20,42 +40,7 @@ collections:
   pages:
     output: true
     permalink: /:path/
-
-# Theme customization - Edit these colors!
-theme:
-  primary_color: "#6df"      # Cyan - main accent color
-  background: "#111"          # Dark background
-  secondary_bg: "#222"        # Slightly lighter background
-  container_bg: "#1a1a1a"    # Container background
-  text_color: "#ddd"          # Light text
-  muted_text: "#999"          # Muted/meta text
-  border_color: "#444"        # Border color
-
-# Defaults
-defaults:
-  - scope:
-      path: ""
-      type: "posts"
-    values:
-      layout: "post"
-  - scope:
-      path: ""
-      type: "journal"
-    values:
-      layout: "post"
-  - scope:
-      path: ""
-      type: "poetry"
-    values:
-      layout: "post"
-
-# Build settings
-markdown: kramdown
-plugins:
-  - jekyll-feed
-  - jekyll-seo-tag
-
-# Exclude from build
+title: Jill's Blog
 exclude:
   - README.md
   - Gemfile
@@ -65,3 +50,5 @@ exclude:
   - .bundle
   - .git
   - .github
+description: Who Did This??
+baseurl: ""
