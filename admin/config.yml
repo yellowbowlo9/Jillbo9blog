@@ -1,8 +1,9 @@
 backend:
   name: github
-  repo: yellowbowlo9/yellowbowlo9.github.io # Your GitHub username/repo
+  repo: yellowbowlo9/yellowbowlo9.github.io
   branch: main
-  base_url: https://decap-oauth.onrender.com # Free OAuth provider service
+  # Using free, reliable OAuth gateway - see SETUP_INSTRUCTIONS.md for details
+  base_url: https://decap-oauth-gateway.netlify.app
 
 # Uncomment below to enable drafts
 # publish_mode: editorial_workflow
