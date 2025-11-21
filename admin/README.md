@@ -1,70 +1,60 @@
-# Decap CMS Setup for GitHub Pages
+# Decap CMS Admin Panel
 
-## Current Issue
-Decap CMS requires OAuth authentication to work on GitHub Pages. The error you're seeing is because the site is trying to use Netlify's OAuth service, which no longer works since we migrated to GitHub Pages.
+## 🚨 Login Button Not Appearing?
 
-## Solutions
+**This is expected!** Decap CMS requires an OAuth backend to show the login button on GitHub Pages.
 
-### Option 1: Use GitHub OAuth (Recommended for Production)
+## ✅ How to Fix This
 
-1. **Create a GitHub OAuth App**:
-   - Go to https://github.com/settings/developers
-   - Click "New OAuth App"
-   - Fill in:
-     - Application name: `Decap CMS for yellowbowlo9.github.io`
-     - Homepage URL: `https://yellowbowlo9.github.io`
-     - Authorization callback URL: `https://yellowbowlo9.github.io/admin/`
-   - Save the Client ID and Client Secret
+You have two options:
 
-2. **Deploy OAuth Backend** (choose one):
+### Option 1: Production Setup (Recommended)
 
-   **Option A - Using Vercel** (Free):
-   - Fork https://github.com/vencax/netlify-cms-github-oauth-provider
-   - Deploy to Vercel
-   - Add environment variables:
-     - `OAUTH_CLIENT_ID`: Your GitHub OAuth Client ID
-     - `OAUTH_CLIENT_SECRET`: Your GitHub OAuth Client Secret
-   - Note the deployment URL
+Follow the complete step-by-step guide in **[OAUTH_SETUP.md](./OAUTH_SETUP.md)**
 
-   **Option B - Using GitHub Actions**:
-   - Use https://github.com/marketplace/actions/decap-cms-github-backend
-
-3. **Update admin/config.yml**:
-   ```yaml
-   backend:
-     name: github
-     repo: yellowbowlo9/yellowbowlo9.github.io
-     branch: main
-     base_url: https://your-oauth-backend.vercel.app
-   ```
+This will:
+- Set up FREE OAuth authentication via Vercel
+- Enable the login button on https://yellowbowlo9.github.io/admin/
+- Allow you to edit your site from anywhere
+- Takes ~15 minutes
 
 ### Option 2: Local Development Only
 
-Use Decap Server for local editing:
+If you just want to test the CMS locally:
 
 ```bash
+# Run this in your project directory:
 npx decap-server
+
+# Then visit:
+# http://localhost:8080/admin/
 ```
 
-Then update `admin/config.yml` for local:
-```yaml
-backend:
-  name: git-gateway
-local_backend: true
-```
+The login button will appear and work locally without any OAuth setup.
 
-### Option 3: Edit Content Directly in GitHub
+## 📝 What is Decap CMS?
 
-Skip the CMS entirely and edit content files directly:
-- Blog posts: `_posts/`
-- Poetry: `_poetry/`
-- Journal: `_journal/`
-- Pages: `_pages/`
+Decap CMS provides a web-based admin interface to edit your Jekyll site content without touching code.
 
-## Quick Fix to Try First
+Once set up, you can:
+- Create and edit blog posts
+- Manage poetry and journal entries
+- Update site settings and colors
+- Upload images
+- All from a user-friendly web interface!
 
-1. Clear your browser cache completely
-2. Try accessing `/admin/` again
-3. If you see the login button, click it and authorize with GitHub
+## 🔧 Current Configuration
 
-If you want me to set up Option 1, I'll need you to create the GitHub OAuth App and deploy the backend first, then I can update the configuration.
+- **Backend**: GitHub
+- **Repository**: yellowbowlo9/yellowbowlo9.github.io
+- **Branch**: main
+- **Local backend**: Enabled (for development)
+
+## 📚 More Info
+
+- [Decap CMS Documentation](https://decapcms.org/docs/)
+- [GitHub Backend Setup](https://decapcms.org/docs/github-backend/)
+
+---
+
+**Ready to get started?** → Open [OAUTH_SETUP.md](./OAUTH_SETUP.md) and follow the guide!

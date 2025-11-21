@@ -2,10 +2,15 @@ backend:
   name: github
   repo: yellowbowlo9/yellowbowlo9.github.io
   branch: main
-  # TODO: Add OAuth backend for production use
-  # Uncomment and configure when you have OAuth set up:
+  # For production, you need to set up OAuth (see admin/OAUTH_SETUP.md)
+  # Uncomment these lines once you have your OAuth backend deployed:
   # base_url: https://your-oauth-backend.vercel.app
   # auth_endpoint: auth
+
+# Enable local backend for development/testing
+# Run: npx decap-server
+# Then visit: http://localhost:8080/admin/
+local_backend: true
 
 # Editorial workflow for drafts and publishing
 publish_mode: editorial_workflow

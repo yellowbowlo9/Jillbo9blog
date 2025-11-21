@@ -15,18 +15,30 @@ Your blog is now configured to work 100% FREE on GitHub Pages with easy editing 
 
 Your blog will be live at: **https://yellowbowlo9.github.io**
 
-### Step 2: Access Your Admin Panel
-Once your site is live, go to:
+### Step 2: Set Up Admin Panel Authentication
+
+**IMPORTANT**: Before the admin panel works, you need to set up OAuth authentication (this is a one-time setup).
+
+**Option A - For Production Use (Recommended):**
+Follow the detailed guide: `admin/OAUTH_SETUP.md`
+- Takes ~15 minutes
+- Completely FREE (uses Vercel)
+- Works from anywhere
+
+**Option B - For Local Testing Only:**
+```bash
+npx decap-server
+```
+Then visit http://localhost:8080/admin/
+
+Once OAuth is set up, you can access the admin panel at:
 **https://yellowbowlo9.github.io/admin/**
 
 1. Click the "Login with GitHub" button
-2. You'll be asked to fork the repository (click "Fork the repo")
+2. Authorize the application
 3. Make your changes in the admin panel
-4. Click "Publish" to create a pull request
-5. Go to your GitHub repo and merge the pull request
-6. Your changes go live in ~1 minute! 🎊
-
-**Note:** The first time you edit, it creates a fork. After that, you can set yourself as a collaborator to edit directly without pull requests.
+4. Click "Publish" to save changes
+5. Your changes go live in ~1 minute! 🎊
 
 ## 📝 How to Use Your Blog
 
@@ -70,10 +82,15 @@ Everything is editable from the web interface at `/admin/`:
 - Wait 2-3 minutes after enabling
 - Try visiting your site first: https://yellowbowlo9.github.io
 
+### "Login button doesn't appear"
+**This is the most common issue!** Decap CMS requires OAuth setup to work.
+- See `admin/OAUTH_SETUP.md` for the complete fix
+- Or run `npx decap-server` for local testing only
+
 ### "Login button doesn't work" or "Redirect loop"
-- Make sure you're logged into GitHub
-- Click "Fork the repo" when prompted
-- If you see a loop, clear your browser cache and try again
+- Make sure OAuth is properly configured (see `admin/OAUTH_SETUP.md`)
+- Verify your Vercel URL is correct in `admin/config.yml`
+- Clear your browser cache and try again
 - Use an incognito/private browser window if issues persist
 
 ### "My changes aren't showing up"
@@ -81,18 +98,18 @@ Everything is editable from the web interface at `/admin/`:
 - Hard refresh your browser (Ctrl+Shift+R or Cmd+Shift+R)
 
 ### Still having issues?
-The new setup uses GitHub's built-in authentication (no external OAuth provider needed). If you're still having trouble, try:
-1. Making sure you have write access to the repository
-2. Checking that GitHub Pages is enabled and your site is live
-3. Clearing all browser cookies and cache for your site
+The admin panel requires an OAuth backend to authenticate with GitHub. See `admin/OAUTH_SETUP.md` for setup instructions. If you're still having trouble:
+1. Make sure OAuth is configured (see `admin/OAUTH_SETUP.md`)
+2. Verify you have write access to the repository
+3. Check that GitHub Pages is enabled and your site is live
+4. Clear all browser cookies and cache for your site
 
 ## 💰 Cost
 
 **$0.00 FOREVER**
 - GitHub Pages: Free
 - Decap CMS: Free & Open Source
-- GitHub Authentication: Free (built-in)
-- No external services needed
+- OAuth Backend (Vercel): Free (Hobby plan)
 - No credit card needed
 - No limits on posts or edits
 
